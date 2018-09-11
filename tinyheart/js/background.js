@@ -1,4 +1,3 @@
 function drawBackground() {
-
-  ctx2.
+ctx2.drawImage(bgPic,0,0,canwidth,canhg)
 }
