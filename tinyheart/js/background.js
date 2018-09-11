@@ -1,0 +1,4 @@
+function drawBackground() {
+
+  ctx2.
+}
