@@ -10,7 +10,7 @@ var canhg
 var ane
 var fruit
 var bgPic = new Image()
-
+var mom
 document.body.onload = game;
 
 function game (){
@@ -36,7 +36,8 @@ function init() {
   ane.init()
   fruit = new fruitObj()
   fruit.init()
-
+ mom = new momObj()
+ mom.init()
   // canvas context
 }
 
@@ -44,10 +45,13 @@ function init() {
 function gameloop(){
    window.requestAnimFrame(gameloop) // setInterval, setTimeout, frame per second
    var now = Date.now()
-   deltaTime = now - lastTime
+   daltaTime = now - lastTime
    lastTime = Date.now()
    drawBackground()
    ane.draw()
    fruit.draw()
+   fruitMonitor()
+   ctx1.clearRect(0,0,canwidth,canhg)
+   mom.draw()
 
  }
