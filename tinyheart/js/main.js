@@ -5,12 +5,18 @@ var ctx2
 var lastTime
 var daltaTime
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
 var canwidth
 var canhg
 var ane
 var fruit
 var bgPic = new Image()
+<<<<<<< HEAD
+>>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
+=======
 >>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
 document.body.onload = game;
 
@@ -19,8 +25,12 @@ function game (){
   lastTime = Date.now()
   daltaTime = 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   // gameloop()
+=======
+  gameloop()
+>>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
 =======
   gameloop()
 >>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
@@ -33,7 +43,10 @@ function init() {
   can2 = document.querySelector('#canvas2')
   ctx2= can2.getContext("2d")
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
   bgPic.src = './src/background.jpg'
   canwidth = can1.width
   canhg = can1.height
@@ -41,6 +54,9 @@ function init() {
   ane.init()
   fruit = new fruitObj()
   fruit.init()
+<<<<<<< HEAD
+>>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
+=======
 >>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
   // canvas context
 }
@@ -52,11 +68,17 @@ function gameloop(){
    deltaTime = now - lastTime
    lastTime = Date.now()
 <<<<<<< HEAD
+<<<<<<< HEAD
    console.log(deltaTime)
 =======
+=======
+>>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
 
    drawBackground()
    ane.draw()
    fruit.draw()
+<<<<<<< HEAD
+>>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
+=======
 >>>>>>> 9670231aba166e8adec9ec842d448cc45152bcb4
  }
