@@ -4,11 +4,13 @@ var ctx1
 var ctx2
 var lastTime
 var daltaTime
+
 var canwidth
 var canhg
 var ane
 var fruit
 var bgPic = new Image()
+var mom
 document.body.onload = game;
 
 function game (){
@@ -16,6 +18,8 @@ function game (){
   lastTime = Date.now()
   daltaTime = 0
   gameloop()
+
+
 }
 
 
@@ -24,6 +28,7 @@ function init() {
   ctx1= can1.getContext("2d")
   can2 = document.querySelector('#canvas2')
   ctx2= can2.getContext("2d")
+
   bgPic.src = './src/background.jpg'
   canwidth = can1.width
   canhg = can1.height
@@ -31,6 +36,8 @@ function init() {
   ane.init()
   fruit = new fruitObj()
   fruit.init()
+ mom = new momObj()
+ mom.init()
   // canvas context
 }
 
@@ -38,10 +45,13 @@ function init() {
 function gameloop(){
    window.requestAnimFrame(gameloop) // setInterval, setTimeout, frame per second
    var now = Date.now()
-   deltaTime = now - lastTime
+   daltaTime = now - lastTime
    lastTime = Date.now()
-
    drawBackground()
    ane.draw()
    fruit.draw()
+   fruitMonitor()
+   ctx1.clearRect(0,0,canwidth,canhg)
+   mom.draw()
+
  }
