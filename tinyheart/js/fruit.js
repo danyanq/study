@@ -11,7 +11,7 @@ var fruitObj = function() {
 }
 
 
-fruitObj.prototype.num = 15
+fruitObj.prototype.num = 30
 fruitObj.prototype.init = function() {
 
   for (var i = 0; i < this.num; i++) {
@@ -49,7 +49,7 @@ fruitObj.prototype.draw = function() {
         this.y[i] -= this.speed[i] * 7 * daltaTime
       }
 
-      console.log(daltaTime)
+      // console.log(daltaTime)
       ctx2.drawImage(pic, this.x[i] - this.l[i] * 0.5, this.y[i] - this.l[i] * 0.5, this.l[i], this.l[i])
       //find an ane, grouw ,fly up
       if (this.y[i] < 10) {
@@ -86,7 +86,9 @@ fruitObj.prototype.update = function() {
 
 }
 
-
+fruitObj.prototype.dead = function (i) {
+  this.alive[i] = false
+}
 
 function fruitMonitor() {
   var num = 0

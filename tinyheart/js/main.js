@@ -11,6 +11,9 @@ var ane
 var fruit
 var bgPic = new Image()
 var mom
+var mx
+var my
+
 document.body.onload = game;
 
 function game (){
@@ -28,7 +31,7 @@ function init() {
   ctx1= can1.getContext("2d")
   can2 = document.querySelector('#canvas2')
   ctx2= can2.getContext("2d")
-
+  can1.addEventListener('mousemove',onMouseMove,false)
   bgPic.src = './src/background.jpg'
   canwidth = can1.width
   canhg = can1.height
@@ -38,6 +41,9 @@ function init() {
   fruit.init()
  mom = new momObj()
  mom.init()
+
+ mx = canwidth * 0.5
+ my = canhg * 0.5
   // canvas context
 }
 
@@ -53,5 +59,15 @@ function gameloop(){
    fruitMonitor()
    ctx1.clearRect(0,0,canwidth,canhg)
    mom.draw()
-
+momFruitCollision()
  }
+
+
+function onMouseMove(e) {
+
+  if (e.offSetX || e.layerX) {
+   mx = e.offSetX == undefined ? e.layerX : e.offSetX
+    my = e.offSetY == undefined ? e.layerY : e.offSetY
+  // console.log(mx,my)
+  }
+}
