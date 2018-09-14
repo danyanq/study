@@ -11,6 +11,7 @@ var ane
 var fruit
 var bgPic = new Image()
 var mom
+var baby
 var mx
 var my
 
@@ -40,8 +41,9 @@ function init() {
   fruit = new fruitObj()
   fruit.init()
  mom = new momObj()
+ baby = new babyObj()
  mom.init()
-
+baby.init()
  mx = canwidth * 0.5
  my = canhg * 0.5
   // canvas context
@@ -59,7 +61,8 @@ function gameloop(){
    fruitMonitor()
    ctx1.clearRect(0,0,canwidth,canhg)
    mom.draw()
-momFruitCollision()
+ momFruitCollision()
+  baby.draw()
  }
 
 
