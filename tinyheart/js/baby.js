@@ -46,7 +46,7 @@ if(this.babyEyeTimer > this.babyEyeInterval){
      this.babyEyeTimer %= this.babyEyeInterval
 
 
-     if( this.babyEyeCount ==  0 ){
+     if( this.babyEyeCount ==   0 ){
        this.babyEyeInterval = Math.random() * 1500 + 2000
 
      } else {
