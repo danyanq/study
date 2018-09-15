@@ -14,7 +14,8 @@ var mom
 var baby
 var mx
 var my
-
+var babyBody = []
+var babyTail = []
 document.body.onload = game;
 
 function game (){
@@ -42,14 +43,19 @@ function init() {
   fruit.init()
  mom = new momObj()
  baby = new babyObj()
+
  mom.init()
 baby.init()
  mx = canwidth * 0.5
  my = canhg * 0.5
   // canvas context
+  for (var i = 0; i < 8 ; i++) {
+
+       babyTail[i] = new Image()
+       babyTail[i].src = './src/babyTail' + i + '.png'
+    }
+
 }
-
-
 function gameloop(){
    window.requestAnimFrame(gameloop) // setInterval, setTimeout, frame per second
    var now = Date.now()
