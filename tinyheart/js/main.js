@@ -61,6 +61,12 @@ baby.init()
          babyEye[i].src = './src/babyEye' + i + '.png'
       }
 
+      for (var i = 0; i < 20 ; i++) {
+
+           babyBody[i] = new Image()
+           babyBody[i].src = './src/babyFade' + i + '.png'
+        }
+
 }
 function gameloop(){
    window.requestAnimFrame(gameloop) // setInterval, setTimeout, frame per second

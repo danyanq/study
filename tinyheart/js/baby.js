@@ -9,7 +9,9 @@ var babyObj = function() {
   this.babyEyeCount = 0
   this.babyEyeTimer = 0
   this.babyEyeInterval = 1000
-
+  this.babyBodyTimer = 0
+  this.babyBodyCount = 0
+  this.babyBOodyInterval
 }
 babyObj.prototype.init = function() {
   this.x = canwidth * 0.5 - 50
@@ -36,35 +38,44 @@ babyObj.prototype.draw = function() {
   }
 
 
-// this.babyEyeTimer +=daltaTime
-this.babyEyeTimer += daltaTime
-// console.log('daltatime', daltaTime)
-console.log('this.babyEyeTimer', this.babyEyeTimer)
-if(this.babyEyeTimer > this.babyEyeInterval){
+  this.babyEyeTimer += daltaTime
 
-     this.babyEyeCount = (this.babyEyeCount + 1) % 2
-     this.babyEyeTimer %= this.babyEyeInterval
+  if (this.babyEyeTimer > this.babyEyeInterval) {
+
+    this.babyEyeCount = (this.babyEyeCount + 1) % 2
+    this.babyEyeTimer %= this.babyEyeInterval
 
 
-     if( this.babyEyeCount ==   0 ){
-       this.babyEyeInterval = Math.random() * 1500 + 2000
+    if (this.babyEyeCount == 0) {
+      this.babyEyeInterval = Math.random() * 1500 + 2000
 
-     } else {
-       this.babyEyeInterval = 200
-     }
- }
+    } else {
+      this.babyEyeInterval = 200
+    }
+  }
 
-var babyEyeCount = this.babyEyeCount
+  var babyEyeCount = this.babyEyeCount
   var TailCount = this.TailCount
-  // console.log(TailCount);
   this.angle = lerpAngle(beta, this.angle, 0.6)
+
+  //baby body
+  this.babyBodyTimer += daltaTime
+  if (this.babyBodyTimer > 300) {
+    this.babyBodyCount = (this.babyBodyCount + 1)
+    this.babyBodyTimer %=300
+    if (this.babyBodyCount > 19) {
+      this.babyBodyCount = 19
+    }
+
+
+  }
   ctx1.save()
   ctx1.translate(this.x, this.y)
   ctx1.rotate(this.angle)
   // console.log(TailCount);
-  ctx1.drawImage(babyTail[TailCount], - babyTail[TailCount].width * 0.5 + 23, - babyTail[TailCount].height * 0.5)
-
-  ctx1.drawImage(this.babyBody, -this.babyBody.width * 0.5, -this.babyBody.height * 0.5)
+  ctx1.drawImage(babyTail[TailCount], -babyTail[TailCount].width * 0.5 + 23, -babyTail[TailCount].height * 0.5)
+  var babyBodyCount = this.babyBodyCount
+  ctx1.drawImage(babyBody[babyBodyCount], -babyBody[babyBodyCount].width * 0.5, -babyBody[babyBodyCount].height * 0.5)
 
   ctx1.drawImage(babyEye[babyEyeCount], -babyEye[babyEyeCount].width * 0.5, -babyEye[babyEyeCount].height * 0.5)
   ctx1.restore()
