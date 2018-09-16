@@ -80,6 +80,7 @@ function gameloop(){
    ctx1.clearRect(0,0,canwidth,canhg)
    mom.draw()
  momFruitCollision()
+ momBabyCollision()
   baby.draw()
  }
 
