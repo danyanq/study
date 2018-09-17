@@ -14,7 +14,8 @@ var mom
 var baby
 var mx
 var my
-
+var babyTail = []
+var babyEye = []
 document.body.onload = game;
 
 function game (){
@@ -46,6 +47,14 @@ function init() {
 baby.init()
  mx = canwidth * 0.5
  my = canhg * 0.5
+   for(var i = 0 ; i < 8; i++){
+     babyTail[i] = new Image()
+     babyTail[i].src = "./src/babyTail" + i + ".png"
+   }
+   for(var i = 0 ; i < 2; i++){
+     babyEye[i] = new Image()
+     babyEye[i].src = "./src/babyEye" + i + ".png"
+   }
   // canvas context
 }
 
