@@ -11,7 +11,7 @@ var fruitObj = function() {
 }
 
 
-fruitObj.prototype.num = 30
+fruitObj.prototype.num = 15
 fruitObj.prototype.init = function() {
 
   for (var i = 0; i < this.num; i++) {

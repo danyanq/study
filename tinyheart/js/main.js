@@ -84,7 +84,7 @@ function init() {
     momEye[i].src = './src/bigEye' + i + '.png'
   }
 
-  var data = new dataObj()
+   data = new dataObj()
 }
 
 function gameloop() {
@@ -100,7 +100,10 @@ function gameloop() {
   mom.draw()
   momFruitCollision()
   momBabyCollision()
+
   baby.draw()
+  data.draw()
+
 }
 
 
