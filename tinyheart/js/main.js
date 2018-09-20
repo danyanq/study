@@ -21,6 +21,8 @@ var babyEye = []
 var momTail = []
 var momEye = []
 var data
+var momBodyOra = []
+var momBodyBlue = []
 
 document.body.onload = game;
 
@@ -47,10 +49,8 @@ function init() {
   ane.init()
   fruit = new fruitObj()
   fruit.init()
-
   mom = new momObj()
   baby = new babyObj()
-
   mom.init()
   baby.init()
   mx = canwidth * 0.5
@@ -84,7 +84,15 @@ function init() {
     momEye[i].src = './src/bigEye' + i + '.png'
   }
 
-   data = new dataObj()
+  data = new dataObj()
+  for (var i = 0; i < 8; i++) {
+    momBodyOra[i] = new Image()
+    momBodyBlue[i] = new Image()
+    momBodyOra[i].src = "./src/bigSwim" + i + '.png'
+    momBodyBlue[i].src = "./src/bigSwimBlue" + i + '.png'
+  }
+  ctx1.font = '30px Verdana'
+  ctx1.textAlign = 'center'
 }
 
 function gameloop() {
@@ -108,10 +116,12 @@ function gameloop() {
 
 
 function onMouseMove(e) {
-
-  if (e.offSetX || e.layerX) {
-    mx = e.offSetX == undefined ? e.layerX : e.offSetX
-    my = e.offSetY == undefined ? e.layerY : e.offSetY
-    // console.log(mx,my)
+  if(!data.gameOver){
+    if (e.offSetX || e.layerX) {
+      mx = e.offSetX == undefined ? e.layerX : e.offSetX
+      my = e.offSetY == undefined ? e.layerY : e.offSetY
+      // console.log(mx,my)
+    }
   }
+
 }

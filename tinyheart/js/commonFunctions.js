@@ -112,3 +112,9 @@ function rndi2(m, n) {
 	var a = Math.random() * (n - m) + m;
 	return Math.floor(a);
 }
+function maxNum(a, b) {
+  if (a > b) {
+    return b
+  } else return a
+
+}
