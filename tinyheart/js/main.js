@@ -23,7 +23,7 @@ var momEye = []
 var data
 var momBodyOra = []
 var momBodyBlue = []
-
+ var wave
 document.body.onload = game;
 
 function game() {
@@ -31,8 +31,6 @@ function game() {
   lastTime = Date.now()
   daltaTime = 0
   gameloop()
-
-
 }
 
 
@@ -93,6 +91,10 @@ function init() {
   }
   ctx1.font = '30px Verdana'
   ctx1.textAlign = 'center'
+
+   wave = new waveObj()
+  wave.init()
+  wave.draw()
 }
 
 function gameloop() {

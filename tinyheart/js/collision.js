@@ -10,6 +10,7 @@ function momFruitCollision() {
         if (l < 900) {
           //fruit eaten
           fruit.dead(i)
+          wave.born()
           data.fruitNum++
           mom.momBodyCount++
           if (mom.momBodyCount > 7) {
@@ -17,8 +18,7 @@ function momFruitCollision() {
           }
           if (fruit.fruitType[i] == 'blue') {
             data.double = 2
-
-          }
+           }
 
         }
 

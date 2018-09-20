@@ -37,5 +37,5 @@ dataObj.prototype.addScore= function () {
   this.score += this.fruitNum * 100 * this.double
   this.fruitNum = 0
   this.double = 1
-console.log(this.fruitNum ,this.double,this.score);
+
 };
